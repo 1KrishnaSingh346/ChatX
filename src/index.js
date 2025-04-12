@@ -10,7 +10,7 @@ import path from "path";
 
 // Initialize Express app
 
-const PORT = process.env.PORT || 5000; // Default to 5000 if PORT is undefined
+const PORT = process.env.PORT || 5001; // Default to 5001 if PORT is undefined
 const __dirname = path.resolve();
 
 // Connect to Database before starting the server

@@ -1,0 +1,48 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs
+logs/
+*.log
+log.txt
+*.out
+*.pid
+*.gz
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment files
+.env
+.env.*.local
+
+# Optional npm cache directory
+.npm/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Build output
+dist/
+build/
+tmp/
+temp/
+
+# Render local development folders
+.render/

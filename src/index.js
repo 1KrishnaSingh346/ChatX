@@ -9,7 +9,6 @@ import { app, server } from "./lib/socket.js";
 import path from "path";
 
 // Initialize Express app
-
 const PORT = process.env.PORT || 5001; // Default to 5001 if PORT is undefined
 const __dirname = path.resolve();
 
@@ -22,7 +21,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://chatxv01.netlify.app",
+    origin: "https://chatxv01.netlify.app", // Adjust with the actual Netlify URL
     credentials: true,
   })
 );
@@ -31,12 +30,12 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-if(process.env.NODE_ENV === "production")
-{
-  app.use(express.static(path.join(__dirname, "../Frontend/dist"))); // when system go under production
+// Serve static files in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "Frontend", "dist"))); // Update path if needed
 
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../Frontend", "dist", "index.html"));
+    res.sendFile(path.join(__dirname, "Frontend", "dist", "index.html")); // Ensure the path is correct
   });
 }
 
